@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meata charset="UTF-8">
+    <title>My web</title>
+        
+  </head>
+
+  <body>
+    <h1>My Web Game</h1>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <img id="map" width="800" height="800" src="http://nostarch.com/images/treasuremap.png">
+    <p id = "distance"></p>
+
+
+    <script>
+      var getRandomNumber = function(size){
+        return Math.floor(Math.random() * size);
+      };
+
+      var Width = 800;
+      var Height = 800;
+
+      var clicks = 0;
+
+      var target = {
+        x:getRandomNumber(Width),
+        y:getRandomNumber(Height)
+      };
+      var getDistance = function(event,target){
+          var diffx = event.offsetX - target.x;
+          var diffy = event.offsetY - target.y;
+          return Math.sqrt((diffx * diffx) + (diffy * diffy));
+      };
+
+      var getDistanceHint = function(distance){
+        if (distance<8){
+          return "Вы выгграли";
+        } else if (distance<10){
+          return "Обожжешься";
+        } else if (distance < 20){
+          return "Очень горячо";
+        } else if (distance < 40){
+          return "Горячо";
+        } else if (distance <80){
+          return "Тепло";
+        } else if (distance < 160){
+          return "Холодно";
+        } else if (distance < 320){
+          return "Очень холодно";
+        } else {
+          return "Замерзнешь!";
+        }
+      };
+
+      $("#map").click(function(event){
+        clicks++;
+        var distance = getDistance(event, target);
+        var distanceHint = getDistanceHint(distance);
+        $("#distance").text(distanceHint);
+        if (distance < 8) {
+          alert("Клад найден! Сделано кликов: " + clicks);
+        }
+      });
+
+    </script>
+  </body>
+</html>
