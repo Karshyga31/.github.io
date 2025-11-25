@@ -187,5 +187,20 @@
             },100);
 
         </script>
+		<div id="controls" style="
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
+">
+    <button onclick="snake.setDirection('up')">⬆️</button>
+    <button onclick="snake.setDirection('left')">⬅️</button>
+    <button onclick="snake.setDirection('down')">⬇️</button>
+    <button onclick="snake.setDirection('right')">➡️</button>
+</div>
+
     </body>
 </html>
