@@ -189,18 +189,50 @@
         </script>
 		<div id="controls" style="
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    gap: 20px;
-    font-size: 30px;
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 80px 80px;
+    gap: 15px;
+    justify-items: center;
+    align-items: center;
+    user-select: none;
 ">
-    <button onclick="snake.setDirection('up')">⬆️</button>
-    <button onclick="snake.setDirection('left')">⬅️</button>
-    <button onclick="snake.setDirection('down')">⬇️</button>
-    <button onclick="snake.setDirection('right')">➡️</button>
+
+    <div></div>
+    <button onclick="snake.setDirection('up')" style="
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+        border-radius: 50%;
+    ">⬆️</button>
+    <div></div>
+
+    <button onclick="snake.setDirection('left')" style="
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+        border-radius: 50%;
+    ">⬅️</button>
+
+    <button onclick="snake.setDirection('down')" style="
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+        border-radius: 50%;
+    ">⬇️</button>
+
+    <button onclick="snake.setDirection('right')" style="
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+        border-radius: 50%;
+    ">➡️</button>
+
 </div>
+
 
     </body>
 </html>
